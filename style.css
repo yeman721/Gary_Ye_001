@@ -63,7 +63,7 @@ img {
 .portfolio {
   display: grid;
   height: 100%;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
 }
@@ -89,6 +89,7 @@ td.move:hover {
 .logo{
     padding-left: 5%;
     width: 150px;
+    min-width: 50px;
     border-radius: 100px;
 }
 .bio-title{
@@ -151,4 +152,38 @@ td.move:hover {
 
 .rounded {
     border-radius: 20px;
+}
+
+
+@media screen and (max-width:1180px) {
+    .portfolio {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1,1fr);
+    }
+    .portfolio-item.medium {
+        grid-row: span 1;
+    }
+    .portfolio-item.medium.skillset,
+    .portfolio-item.tall.skillset {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .portfolio-item.wide {
+        grid-column: span 2;
+    }
+    .portfolio-item.medium.skillset,
+    .portfolio-item.tall.skillset {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .uni {
+        padding: 0 20px;
+    }
 }
